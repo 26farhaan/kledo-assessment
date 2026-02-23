@@ -111,7 +111,7 @@ function FilterPage() {
           />
           <button
             onClick={handleReset}
-            className='bg-gray-100 hover:bg-blue-100 font-semibold text-[12px] py-2 px-4 rounded-xl border border-blue-200 active:bg-blue-300'
+            className='bg-gray-100 hover:bg-blue-100 font-semibold text-[12px] py-2 px-4 rounded-xl border border-blue-200 active:bg-blue-300 dark:text-gray-700'
           >
             Reset
           </button>
