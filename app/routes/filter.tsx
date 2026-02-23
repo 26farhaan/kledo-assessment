@@ -20,7 +20,7 @@ type dataTypes = {
   }[];
 };
 
-function Filter() {
+function FilterPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [datas, setDatas] = useState<dataTypes>();
 
@@ -65,6 +65,10 @@ function Filter() {
     districts || undefined,
   ].filter(Boolean) as string[];
 
+  const handleReset = () => {
+    setSearchParams({});
+  };
+
   return (
     <div className='grid md:grid-cols-4 h-full'>
       <div className=' light:bg-gray-50 border-r-2 border-r-gray-100'>
@@ -105,6 +109,12 @@ function Filter() {
             onChange={(val) => handleSearchParamsChange('districts', val)}
             disabled={!regencies}
           />
+          <button
+            onClick={handleReset}
+            className='bg-gray-100 hover:bg-blue-100 font-semibold text-[12px] py-2 px-4 rounded-xl border border-blue-200 active:bg-blue-300'
+          >
+            Reset
+          </button>
         </div>
       </div>
       <div className='md:col-span-3 flex flex-col'>
@@ -145,4 +155,4 @@ function Filter() {
   );
 }
 
-export default Filter;
+export default FilterPage;
